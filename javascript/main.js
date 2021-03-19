@@ -19,29 +19,6 @@ function userPlay() {
 }
 
 
-// Evaluate results after 5 rounds of game
-function game() {
-    let score = [0,0];
-    for (let i = 0; i < 5; i++) {
-        console.log(`ROUND #${i+1}`);
-
-        result = playRound(userPlay(), computerPlay());
-        // Update current user score
-        score[0] += result[0];
-        // Update current computer score
-        score[1] += result[1];
-        console.log(`Your score: ${score[0]} \n Computer score: ${score[1]}`);
-    }
-    if (score[0] === score[1]) {
-        console.log(`Looks like it's a draw overall. You both scored ${score[0]} points`)
-    } else if (score[0] > score[1]) {
-        console.log(`YOU'RE CHAMPION. You beat the computer ${score[0]}:${score[1]}`)
-    } else {
-        console.log(`YOU'VE LOST. The computer beat you ${score[1]}:${score[0]}`)
-    }
-}
-
-
 // Evaluate result of single round of game
 function playRound(userSelection, computerSelection) {
     // Results can be either of following
@@ -52,19 +29,43 @@ function playRound(userSelection, computerSelection) {
         (userSelection === "Rock" && computerSelection === "Scissors")
         || (userSelection === "Paper" && computerSelection === "Rock")
         || (userSelection === "Scissors" && computerSelection === "Paper")
-    )
-    if (userSelection === computerSelection) {
-        console.log(`It's a draw! You both chose ${userSelection}.`);
-        return [0,0];
-    } else if (winningCombinations) {
-        console.log(`You win! ${userSelection} beats ${computerSelection}`);
-        return [1,0];
-    } else {
-        console.log(`You lose! ${computerSelection} beats ${userSelection}`);
-        return [0,1];
+        )
+        if (userSelection === computerSelection) {
+            console.log(`It's a draw! You both chose ${userSelection}.`);
+            return [0,0];
+        } else if (winningCombinations) {
+            console.log(`You win! ${userSelection} beats ${computerSelection}`);
+            return [1,0];
+        } else {
+            console.log(`You lose! ${computerSelection} beats ${userSelection}`);
+            return [0,1];
+        }
+        
     }
-
-}
-
-// Test game
-game();
+    
+    
+    // Evaluate results after 5 rounds of game
+    function game() {
+        let score = [0,0];
+        for (let i = 0; i < 5; i++) {
+            console.log(`ROUND #${i+1}`);
+    
+            result = playRound(userPlay(), computerPlay());
+            // Update current user score
+            score[0] += result[0];
+            // Update current computer score
+            score[1] += result[1];
+            console.log(`Your score: ${score[0]} \n Computer score: ${score[1]}`);
+        }
+        if (score[0] === score[1]) {
+            console.log(`Looks like it's a draw overall. You both scored ${score[0]} points`)
+        } else if (score[0] > score[1]) {
+            console.log(`YOU'RE CHAMPION. You beat the computer ${score[0]}:${score[1]}`)
+        } else {
+            console.log(`YOU'VE LOST. The computer beat you ${score[1]}:${score[0]}`)
+        }
+    }
+    
+    
+    // Test game
+    game();
