@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Rock Paper Scissors</title>
         <script src="javascript/main.js"></script>
     </head>
     <body>
-        <h1>Rock, Paper, Scissors!</h1>
-        <p>Open the browser's console to start playing.</p>
+        <header>
+            <div id="headline-container">
+                <h1 class="headline" id="headline">Rock</h1>
+                <h1>,</h1>
+                <h1 class="headline" id="paper-headline">Paper</h1>
+                <h1>,</h1>
+                <h1 class="headline" id="scissors-headline">Scissors!</h1>
+            </div>
+        </header>
+        <main>
+            <div play-area>
+                <div id="selection-btns-container">
+                    <img class="selection-btn" id="rock-image" src="#" alt-text="Rock Button">
+                    <img class="selection-btn" src="#" alt-text="Paper Button">
+                    <img class="selection-btn" src="#" alt-text="Scissors Button">
+                </div>
+                <div class="commentry-container">
+                    <p id="commentry"></p>
+                </div>
+            </div>
+            <div class="results"></div>
+        </main>
     </body>
 </html>
