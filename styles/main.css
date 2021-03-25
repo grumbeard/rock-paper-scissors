@@ -25,7 +25,7 @@ header, main {
 
 @media (min-width: 1200px) {
     body {
-        font-size: 24px;
+        font-size: 16px;
     }
     header, main {
         width: 40%;
@@ -55,21 +55,24 @@ main {
 }
 
 #play-area, #results-container {
-    padding: 2em 0;
+    margin: 2em 0;
     width: 100%;
 }
 
 /* MAIN -- Play Area */
 
 #play-area {
+    height: 33vh;
     display: flex;
     flex-direction: column;
     background-color: pink;
 }
 
 #selection-btns-container {
+    flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
     overflow: hidden;
 }
 
@@ -82,6 +85,11 @@ main {
 .selection-btn .selected {
     transform: scale(1.2);
     z-index: 2;
+}
+
+#commentry-container {
+    padding: 1em;
+    background-color: darkgray;
 }
 
 /* MAIN -- Results */

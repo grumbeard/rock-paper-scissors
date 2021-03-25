@@ -4,8 +4,6 @@ const playOptionButtons = document.querySelectorAll(".selection-btn");
 
 // Initiate input channel for user choice
 playOptionButtons.forEach(playOptionButton => {
-    console.log("Added to ");
-    console.log(playOptionButton.dataset.option);
     playOptionButton.addEventListener('click', handleUserChoice);
 });
 
