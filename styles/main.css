@@ -1,0 +1,101 @@
+@import "reset.css";
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(169, 222, 249);
+    font-size: 16px;
+}
+
+header, main {
+    margin: 2em 1em;
+    width: 50%;
+}
+
+@media (max-width: 800px) {
+    body {
+        font-size: 11px;
+    }
+    header, main {
+        width: 80%;
+    }
+}
+
+@media (min-width: 1200px) {
+    body {
+        font-size: 24px;
+    }
+    header, main {
+        width: 40%;
+    }
+}
+
+/* HEADER */
+
+#headline-container {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+.headline-part {
+    padding-left: 0.5em;
+}
+
+/* MAIN */
+
+main {
+    display:flex;
+    flex-direction: column;
+}
+
+#play-area, #results-container {
+    padding: 2em 0;
+    width: 100%;
+}
+
+/* MAIN -- Play Area */
+
+#play-area {
+    display: flex;
+    flex-direction: column;
+    background-color: pink;
+}
+
+#selection-btns-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* MAIN -- Results */
+
+#results-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+#user-result {
+    margin: 0 1em;
+    padding-right: 2em;
+    flex: 1;
+}
+
+#computer-result {
+    margin: 0 1em;
+    padding-left: 2em;
+    flex: 1;
+}
+
+#results-separator {
+    flex: 2;
+}

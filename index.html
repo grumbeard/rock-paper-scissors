@@ -2,30 +2,44 @@
 <html>
     <head>
         <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" type="text/css" href="styles/main.css">
         <script src="javascript/main.js"></script>
     </head>
     <body>
         <header>
             <div id="headline-container">
-                <h1 class="headline" id="headline">Rock</h1>
+                <h1 class="headline-part" id="headline-part__rock">Rock</h1>
                 <h1>,</h1>
-                <h1 class="headline" id="paper-headline">Paper</h1>
+                <h1 class="headline-part" id="headline-part__paper">Paper</h1>
                 <h1>,</h1>
-                <h1 class="headline" id="scissors-headline">Scissors!</h1>
+                <h1 class="headline-part" id="headline-part__scissors">Scissors!</h1>
             </div>
         </header>
         <main>
-            <div play-area>
+            <div id="play-area">
                 <div id="selection-btns-container">
-                    <img class="selection-btn" id="rock-image" src="#" alt-text="Rock Button">
-                    <img class="selection-btn" src="#" alt-text="Paper Button">
-                    <img class="selection-btn" src="#" alt-text="Scissors Button">
+                    <img id="selection-btn__rock" src="#" alt-text="Rock Button">
+                    <img id="selection-btn__paper" src="#" alt-text="Paper Button">
+                    <img id="selection-btn__scissors" src="#" alt-text="Scissors Button">
                 </div>
-                <div class="commentry-container">
+                <div id="commentry-container">
                     <p id="commentry"></p>
                 </div>
             </div>
-            <div class="results"></div>
+            <div id="results-container">
+                <div id="user-result">
+                    <h2>YOU</h2>
+                    <p id="user-score"></p>
+                </div>
+                <div id="results-separator">
+                    <h2>vs</h2>
+                    <p>:</p>
+                </div>
+                <div id="computer-result">
+                    <h2>COMPUTER</h2>
+                    <p id="computer-score"></p>
+                </div>
+            </div>
         </main>
     </body>
 </html>
