@@ -70,6 +70,18 @@ main {
 #selection-btns-container {
     display: flex;
     justify-content: center;
+    overflow: hidden;
+}
+
+.selection-btn {
+    width: 30%;
+    height: auto;
+    z-index: 1;
+}
+
+.selection-btn .selected {
+    transform: scale(1.2);
+    z-index: 2;
 }
 
 /* MAIN -- Results */

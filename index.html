@@ -3,7 +3,6 @@
     <head>
         <title>Rock Paper Scissors</title>
         <link rel="stylesheet" type="text/css" href="styles/main.css">
-        <script src="javascript/main.js"></script>
     </head>
     <body>
         <header>
@@ -18,9 +17,9 @@
         <main>
             <div id="play-area">
                 <div id="selection-btns-container">
-                    <img id="selection-btn__rock" src="#" alt-text="Rock Button">
-                    <img id="selection-btn__paper" src="#" alt-text="Paper Button">
-                    <img id="selection-btn__scissors" src="#" alt-text="Scissors Button">
+                    <img class="selection-btn" id="selection-btn__rock" data-option="Rock" src="#" alt-text="Rock Button">
+                    <img class="selection-btn" id="selection-btn__paper" data-option="Paper" src="#" alt-text="Paper Button">
+                    <img class="selection-btn" id="selection-btn__scissors" data-option="Scissors" src="#" alt-text="Scissors Button">
                 </div>
                 <div id="commentry-container">
                     <p id="commentry"></p>
@@ -41,5 +40,6 @@
                 </div>
             </div>
         </main>
+        <script src="javascript/main.js"></script>
     </body>
 </html>

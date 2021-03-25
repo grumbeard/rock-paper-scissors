@@ -1,21 +1,26 @@
-let playOptions = ["Rock", "Paper", "Scissors"];
+let results = [0, 0];
+
+const playOptionButtons = document.querySelectorAll(".selection-btn");
+
+// Initiate input channel for user choice
+playOptionButtons.forEach(playOptionButton => {
+    console.log("Added to ");
+    console.log(playOptionButton.dataset.option);
+    playOptionButton.addEventListener('click', handleUserChoice);
+});
+
+
+// Play round with user choice
+function handleUserChoice(e) {
+    let userChoice = e.target.dataset.option;
+    playRound(userChoice, computerPlay());
+}
 
 
 // Select a random play for the Computer
 function computerPlay() {
+    let playOptions = ["Rock", "Paper", "Scissors"];
     return playOptions[Math.floor(Math.random()*3)];
-}
-
-
-// Get valid play choice from User
-function userPlay() {
-    // Prompt user to input option
-    let input = "";
-    while (!playOptions.includes(input)) {
-        input = prompt("What's your play? Type either 'Rock', 'Paper', or 'Scissors': ");
-        input = input[0].toUpperCase() + input.substring(1).toLowerCase();
-    }
-    return input;
 }
 
 
@@ -29,43 +34,41 @@ function playRound(userSelection, computerSelection) {
         (userSelection === "Rock" && computerSelection === "Scissors")
         || (userSelection === "Paper" && computerSelection === "Rock")
         || (userSelection === "Scissors" && computerSelection === "Paper")
-        )
-        if (userSelection === computerSelection) {
-            console.log(`It's a draw! You both chose ${userSelection}.`);
-            return [0,0];
-        } else if (winningCombinations) {
-            console.log(`You win! ${userSelection} beats ${computerSelection}`);
-            return [1,0];
-        } else {
-            console.log(`You lose! ${computerSelection} beats ${userSelection}`);
-            return [0,1];
-        }
+    )
+    if (userSelection === computerSelection) {
+        console.log(`It's a draw! You both chose ${userSelection}.`);
+        updateResults([0,0]);
+    } else if (winningCombinations) {
+        console.log(`You win! ${userSelection} beats ${computerSelection}`);
+        updateResults([1,0]);
+    } else {
+        console.log(`You lose! ${computerSelection} beats ${userSelection}`);
+        updateResults([0,1]);
+    }
         
+}
+
+
+// Update overall game results
+function updateResults(scoresArr) {
+    // Update current user score
+    results[0] += scoresArr[0];
+    // Update current computer score
+    results[1] += scoresArr[1];
+    console.log(`Your score: ${results[0]} \n Computer score: ${results[1]}`);
+    
+    if (results[0] >= 5 || results[1] >= 5) endGame();
+}
+
+
+// Tally overall results if anyone has won the game
+function endGame() {
+    if (results[0] === results[1]) {
+        console.log(`Looks like it's a draw overall. You both scored ${results[0]} points`)
+    } else if (results[0] > results[1]) {
+        console.log(`YOU'RE CHAMPION. You beat the computer ${results[0]}:${results[1]}`)
+    } else {
+        console.log(`YOU'VE LOST. The computer beat you ${results[1]}:${results[0]}`)
     }
-    
-    
-    // Evaluate results after 5 rounds of game
-    function game() {
-        let score = [0,0];
-        for (let i = 0; i < 5; i++) {
-            console.log(`ROUND #${i+1}`);
-    
-            result = playRound(userPlay(), computerPlay());
-            // Update current user score
-            score[0] += result[0];
-            // Update current computer score
-            score[1] += result[1];
-            console.log(`Your score: ${score[0]} \n Computer score: ${score[1]}`);
-        }
-        if (score[0] === score[1]) {
-            console.log(`Looks like it's a draw overall. You both scored ${score[0]} points`)
-        } else if (score[0] > score[1]) {
-            console.log(`YOU'RE CHAMPION. You beat the computer ${score[0]}:${score[1]}`)
-        } else {
-            console.log(`YOU'VE LOST. The computer beat you ${score[1]}:${score[0]}`)
-        }
-    }
-    
-    
-    // Test game
-    game();
+    results = [0,0];
+}
