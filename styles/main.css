@@ -116,10 +116,19 @@ main {
 }
 
 .selection-btn.selected {
+    filter: invert(.5) sepia(1) saturate(5) hue-rotate(175deg);
     z-index: 2;
     animation-name: select;
     animation-duration: 1s;
     animation-fill-mode: forwards;
+}
+
+.selection-btn.computer-selected {
+    filter: invert(.5) sepia(1) saturate(5) hue-rotate(30deg);
+}
+
+.selection-btn.selected.computer-selected {
+    filter: invert(.5) sepia(1) saturate(5) hue-rotate(220deg);
 }
 
 @keyframes select {
@@ -168,7 +177,7 @@ main {
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 1.8em;
 }
 
 #results-container p {

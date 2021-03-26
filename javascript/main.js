@@ -11,8 +11,8 @@ playOptionButtons.forEach(playOptionButton => {
 // Play round with user choice
 function handleUserChoice(e) {
     let userChoice = e.target.dataset.option;
-    // Deselect any previously selected option
-    playOptionButtons.forEach(playOptionButton => playOptionButton.classList.remove("selected"));
+    // Deselect any previously selected options (user and computer)
+    playOptionButtons.forEach(playOptionButton => playOptionButton.classList.remove("selected", "computer-selected"));
     
     // Add effect to selected option
     e.target.classList.add("selected");
@@ -23,7 +23,13 @@ function handleUserChoice(e) {
 // Select a random play for the Computer
 function computerPlay() {
     let playOptions = ["Rock", "Paper", "Scissors"];
-    return playOptions[Math.floor(Math.random()*3)];
+    let computerChoice = playOptions[Math.floor(Math.random()*3)];
+
+    // Add effect to selected option
+    let option = document.getElementById(`selection-btn__${computerChoice.toLowerCase()}`);
+    option.classList.add("computer-selected");
+
+    return computerChoice;
 }
 
 
