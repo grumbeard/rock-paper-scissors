@@ -42,10 +42,10 @@ function playRound(userSelection, computerSelection) {
         displayText(`It's a draw! You both chose ${userSelection}.`, "commentry");
         updateResults([0,0]);
     } else if (winningCombinations) {
-        displayText(`You win! ${userSelection} beats ${computerSelection}`, "commentry");
+        displayText(`You win! ${userSelection} beats ${computerSelection}.`, "commentry");
         updateResults([1,0]);
     } else {
-        displayText(`You lose! ${computerSelection} beats ${userSelection}`, "commentry");
+        displayText(`You lose! ${computerSelection} beats ${userSelection}.`, "commentry");
         updateResults([0,1]);
     }
 }
@@ -66,12 +66,10 @@ function updateResults(scoresArr) {
 
 // Tally overall results if anyone has won the game
 function endGame() {
-    if (results[0] === results[1]) {
-        displayText(`Looks like it's a draw overall. You both scored ${results[0]} points`, "commentry")
-    } else if (results[0] > results[1]) {
-        displayText(`YOU'RE CHAMPION. You beat the computer ${results[0]}:${results[1]}`, "commentry")
+    if (results[0] > results[1]) {
+        displayText(`YOU'RE CHAMPION`, "commentry")
     } else {
-        displayText(`YOU'VE LOST. The computer beat you ${results[1]}:${results[0]}`, "commentry")
+        displayText(`YOU'VE LOST`, "commentry")
     }
     results = [0,0];
 }

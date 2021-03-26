@@ -1,4 +1,5 @@
 @import "reset.css";
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=IBM+Plex+Mono&display=swap');
 
 body {
     display: flex;
@@ -7,10 +8,11 @@ body {
     align-items: center;
     background-color: rgb(169, 222, 249);
     font-size: 16px;
+    font-family: 'Bungee Inline', cursive;
 }
 
 header, main {
-    margin: 2em 1em;
+    margin: 2em 1em 0em 1em;
     width: 50%;
 }
 
@@ -40,7 +42,7 @@ header, main {
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 2.4em;
 }
 
 .headline-part {
@@ -133,13 +135,16 @@ main {
 
 #commentry-container {
     padding: 1em;
-    background-color: darkgray;
+    background-color: darkslategrey;
 }
 
 #commentry {
     white-space: nowrap;
     overflow: hidden;
-    font-size: 1.5em;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.02em;
+    font-size: 1.2em;
+    color: white;
 }
 
 .typed {
