@@ -164,8 +164,18 @@ main {
 }
 
 @keyframes type {
-    0% {width: 0%}
-    100% {width: 100%};
+    0% { width: 0% }
+    100% { width: 100% };
+}
+
+.blinking {
+    animation-name: blink;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1 }
+    50% { opacity: 0 };
 }
 
 /* MAIN -- Results */

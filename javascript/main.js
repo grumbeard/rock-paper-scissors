@@ -1,4 +1,5 @@
 let results = [0, 0];
+let gameEnd = false;
 
 const playOptionButtons = document.querySelectorAll(".selection-btn");
 
@@ -10,6 +11,9 @@ playOptionButtons.forEach(playOptionButton => {
 
 // Play round with user choice
 function handleUserChoice(e) {
+    // Remove blinking effect on commentry if playing after game ended
+    if (gameEnd) commentry.classList.remove("blinking");
+
     let userChoice = e.target.dataset.option;
     // Deselect any previously selected options (user and computer)
     playOptionButtons.forEach(playOptionButton => playOptionButton.classList.remove("selected", "computer-selected"));
@@ -72,11 +76,14 @@ function updateResults(scoresArr) {
 
 // Tally overall results if anyone has won the game
 function endGame() {
+    gameEnd = true;
     if (results[0] > results[1]) {
         displayText(`YOU'RE CHAMPION`, "commentry")
     } else {
         displayText(`YOU'VE LOST`, "commentry")
     }
+    // Add blinking effect to commentry
+    commentry.classList.add("blinking");
     results = [0,0];
 }
 
