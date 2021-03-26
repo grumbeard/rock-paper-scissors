@@ -47,6 +47,37 @@ h1 {
     padding-left: 0.5em;
 }
 
+#headline-part__rock {
+    animation-name: enlarge;
+    animation-duration: 1s;
+    animation-delay: 1s;
+}
+
+#headline-part__paper {
+    animation-name: enlarge;
+    animation-duration: 1s;
+    animation-delay: 1.5s;
+}
+
+#headline-part__scissors {
+    animation-name: tremble;
+    animation-duration: 1.5s;
+    animation-delay: 2s;
+}
+
+@keyframes enlarge {
+    25% { transform: scale(2) translate(0px, -0.5em); }
+    100% { transform: scale(1); }
+}
+
+@keyframes tremble {
+    60% { transform: scale(2) translate(0px, -0.5em); }
+    65%, 75% { transform: scale(2.5) translate(-15px, -0.5em); }
+    70% { transform: scale(2.5) translate(15px, -0.5em); }
+    80%, 90% { transform: scale(2) translate(15px, -0.5em); }
+    85% { transform: scale(2) translate(-15px, -0.5em); }
+}
+
 /* MAIN */
 
 main {
@@ -108,6 +139,7 @@ main {
 #commentry {
     white-space: nowrap;
     overflow: hidden;
+    font-size: 1.5em;
 }
 
 .typed {
