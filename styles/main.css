@@ -99,6 +99,7 @@ main {
     display: flex;
     flex-direction: column;
     background-color: pink;
+    border: 5px solid steelblue;
 }
 
 #selection-btns-container {
@@ -144,7 +145,7 @@ main {
 
 #commentry-container {
     padding: 1em;
-    background-color: darkslategrey;
+    background-color: darkslategray;
 }
 
 #commentry {
@@ -192,6 +193,7 @@ h2 {
 
 #results-container p {
     font-size: 3em;
+    margin: 0.5em auto;
     padding: 0.5em 0;
 }
 
@@ -210,3 +212,12 @@ h2 {
 #results-separator {
     flex: 2;
 }
+
+#user-score, #computer-score {
+    width: 2em;
+    background-color: palegoldenrod;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+}
+
+#user-score { color: dodgerblue; }
+#computer-score { color: darkseagreen }
