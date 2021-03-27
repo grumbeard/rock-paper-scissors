@@ -1,7 +1,6 @@
 # The Odin Project - Foundations
-***
+
 ## PROJECT #2: Rock Paper Scissors
-***
 
 **Goal**: Implement the Rock Paper Scissors game as part of The Odin Project [curriculum](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/rock-paper-scissors).
 
