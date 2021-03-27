@@ -4,7 +4,8 @@
 
 **Goal**: Implement the Rock Paper Scissors game as part of The Odin Project [curriculum](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/rock-paper-scissors).
 
-Live version of game **[HERE](https://grumbeard.github.io/rock-paper-scissors/)**
+**Live version of game**
+👉 https://grumbeard.github.io/rock-paper-scissors/
 
 **Skills**: HTML/CSS/JavaScript
 - JavaScript event handling:
